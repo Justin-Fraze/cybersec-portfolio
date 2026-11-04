@@ -1,3 +1,8 @@
 # Automation & API Layer
+Goal: Understand how data moves between systems and build your first no-code automation.
 
-This file was added to the AI folder for the automation and API layer work.
+Research how REST APIs work (GET, POST requests, JSON payloads). Watch short documentation explainers on Make.com or Zapier.
+
+Sign up for a free Make.com account. Build a simple 3-step scenario (e.g., when a Google Form is filled out, send an automated notification).
+
+Project: Connect an LLM API (like OpenAI or Anthropic) into a Make.com workflow. Build a micro-automation where an email comes in, an LLM categorizes its urgency, and it posts a summary to a test Slack/Teams channel.

@@ -34,7 +34,7 @@ Eventually, you should see that Maia wants to create a connection to the OpenWea
 
 <img width="559" height="325" alt="image" src="https://github.com/user-attachments/assets/2353374f-636f-4404-ba1e-19ffdf04c8b0" />
 
- This part of the process should be highlighted. Why can't our automation just pull directly from web data to get the weather? Why do we need an API key?
+ This part of the process should be highlighted. Why can't our automation just pull directly from web data to get the weather? Why do we need an API key? - We will revisit this.
 
 
 

@@ -34,7 +34,13 @@ Eventually, you should see that Maia wants to create a connection to the OpenWea
 
 <img width="559" height="325" alt="image" src="https://github.com/user-attachments/assets/2353374f-636f-4404-ba1e-19ffdf04c8b0" />
 
- This part of the process should be highlighted. Why can't our automation just pull directly from web data to get the weather? Why do we need an API key? - We will revisit this.
+This part of the process should be highlighted. Why can't our automation just pull directly from web data to get the weather? Why do we need an API key? - We will revisit this.
+
+make.com will integrate with Google Calendar, and Google Sheets (where I put a daily routine) next. Once we get all the connections going, we'll be good to go!
+
+Making the Google Sheets routine can be quickly made by asking Gemini to look at the sheet and prompting it to write it for you. It's not lazy - it's using the tools as intended.
+
+
 
 
 

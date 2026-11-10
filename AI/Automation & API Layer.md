@@ -21,6 +21,10 @@ The scenario follows these steps:
 
 Make.com handles the connections between services, while data mapping lets me use the information from earlier modules in the final Slack message.
 
+Example Output:
+
+<img width="1279" height="672" alt="image" src="https://github.com/user-attachments/assets/71321e29-2e05-499d-b950-a698a4459577" />
+
 ## Working with APIs
 
 My earlier research focused on how REST APIs use requests and responses to exchange data. This lab helped me see how that information moves through a working automation.

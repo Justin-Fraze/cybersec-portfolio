@@ -1,17 +1,17 @@
-# Daily Briefing Automation
+# AI Labs
 
-A Make.com automation that combines weather, Google Calendar events, and Google Tasks into a daily Slack briefing delivered at 7:00 AM.
+Hands-on labs exploring AI fundamentals through practical projects in my cybersecurity portfolio.
 
-I built this lab to practice connecting services, filtering and formatting data, and automating a daily workflow.
+Topics include:
 
-## Workflow
+- **Automation & Orchestration:** Connecting services and building workflows.
+- **Data & RAG:** Preparing data and grounding AI responses in relevant sources.
+- **Prototyping:** Building and testing AI-powered tools.
+- **Governance & FinOps:** Exploring responsible use, access controls, and cost management.
 
-![Make.com daily briefing workflow](images/make-scenario.png)
+Each lab documents what I built, what I learned, and relevant security considerations.
 
-## Lab Documentation
+## Labs
 
-See [Automation and API Layer](Automation%20and%20API%20Layer.md) for the workflow details, lessons learned, and security considerations.
-
-## Tools Used
-
-Make.com · Weather API · Google Calendar · Google Tasks · Slack
+- [Automation and API Layer](Automation%20and%20API%20Layer.md): A Make.com workflow that combines weather, calendar events, and tasks into a daily Slack briefing.
+- 

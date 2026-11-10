@@ -1,46 +1,54 @@
-# Automation & API Layer
-Goal: Understand how data moves between systems and build your first no-code automation.
+# Automation and API Layer Lab
 
-Research how REST APIs work (GET, POST requests, JSON payloads). Watch short documentation explainers on Make.com or Zapier.
+## Objective
 
-Sign up for a free Make.com account. Build a simple 3-step scenario (e.g., when a Google Form is filled out, send an automated notification).
+I built a daily briefing automation in Make.com that combines a weather forecast, Google Calendar events, and Google Tasks into one Slack message. The scenario runs every morning at 7:00 AM.
 
-Project: Connect an LLM API (like OpenAI or Anthropic) into a Make.com workflow. Build a micro-automation where an email comes in, an LLM categorizes its urgency, and it posts a summary to a test Slack/Teams channel.
+The goal was to put what I learned about REST APIs into practice by connecting services and turning their data into something useful.
 
-## REST APIs
-Representational State Transfer Application Program Interface
+## Workflow
 
-### Introduction to API's
-An API can be thought of as a gateway that allows the client to communicate with a server resource. The restaurant analogy is often used to describe how this works.
+<img width="786" height="444" alt="image" src="https://github.com/user-attachments/assets/bb631e92-0332-461f-973c-d5b0fc2313b0" />
 
-The request-response cycle is the key part of how API's work. A request from the client will need to have certain components, such as an HTTP method, a payload, URL/URI, and other information in the header and parameters. The response normally includes an HTTP status code, a payload (usually in JSON format), and additional header information.
+The scenario follows these steps:
 
-<img width="1920" height="819" alt="image" src="https://github.com/user-attachments/assets/86bab158-fceb-4367-acf1-678da8913837" />
+1. **Weather:** Retrieves the daily weather forecast.
+2. **Google Calendar:** Searches for calendar events, with a filter to include only today’s events.
+3. **Text aggregator:** Combines the calendar events into text for the briefing.
+4. **Google Tasks:** Retrieves tasks from my connected account.
+5. **Text aggregator:** Combines the tasks into text.
+6. **Slack:** Sends the weather, events, and tasks as a daily message.
 
-### No-code automation
-As always, learning tech is 20% content and 80% doing. Let's see how basic automation works using a popular no-code platform: make.com. You can sign up for free on their website.
+Make.com handles the connections between services, while data mapping lets me use the information from earlier modules in the final Slack message.
 
-To get started, let's take a task that can be automated. I would like an automated text message every morning telling me the weather, the events on my Google Calendar, and an integration with a baseline routine I usually keep for my weekdays and weekends. In other words, I want to automate to-do lists and daily planning.
+## Working with APIs
 
-With our task now defined, you might see that make.com offers a prompt to speak with Maia, an AI coworker. Very funny to me that her name includes AI in it. I will start there and give my task as previously defined.
+My earlier research focused on how REST APIs use requests and responses to exchange data. This lab helped me see how that information moves through a working automation.
 
-<img width="557" height="348" alt="image" src="https://github.com/user-attachments/assets/b1e5d75f-b1a9-46f7-b0f2-4b4ab2c11de8" />
+I used Make.com’s built-in modules to retrieve data and pass it between services. This let me focus on selecting the right fields, filtering results, and formatting the output without writing each API request manually.
 
-The first response from Maia is asking how we would like to define the weather, with an offer to connect to the API for OpenWeather. Very cool--we are already seeing how API's work in automations by being the tool that allows us to view information from a separate database. Click though some of the other options that Maia will give, like how you want to send the SMS. I will be using Twilio for this example.
+## What I Learned
 
-<img width="230" height="319" alt="image" src="https://github.com/user-attachments/assets/6c5706ae-4276-4bfc-b7d6-e581f79585b4" />
+One of the main lessons was that retrieving data is only part of the process. The results also need to be filtered and organized so the final message is useful.
 
-Eventually, you should see that Maia wants to create a connection to the OpenWeatherMap, and that it is asking for an API key.
+I practiced:
 
-<img width="559" height="325" alt="image" src="https://github.com/user-attachments/assets/2353374f-636f-4404-ba1e-19ffdf04c8b0" />
+- Mapping information from one module into another.
+- Filtering calendar results to include today’s events.
+- Using text aggregators to combine multiple events and tasks.
+- Scheduling a workflow to run automatically.
+- Bringing information from several services into one message.
 
-This part of the process should be highlighted. Why can't our automation just pull directly from web data to get the weather? Why do we need an API key? - We will revisit this.
+## Security Considerations
 
-make.com will integrate with Google Calendar, and Google Sheets (where I put a daily routine) next. Once we get all the connections going, we'll be good to go!
+This workflow connects personal accounts and moves calendar and task information into Slack. That makes account permissions and the message destination important parts of the design.
 
-Making the Google Sheets routine can be quickly made by asking Gemini to look at the sheet and prompting it to write it for you. It's not lazy - it's using the tools as intended.
+Connections should have only the access the workflow needs, and API keys or other credentials should stay out of GitHub documentation and screenshots. Any example messages should also be checked for private event names, task details, or account information before publishing.
 
+Further improvements would include reviewing the permissions granted to each connection and adding alerts for failed runs.
 
+## Takeaway
 
+This lab gave me hands-on experience connecting APIs through Make.com and turning the results into a scheduled notification. It also showed me how automation introduces security decisions around access, credentials, and where data is sent.
 
 

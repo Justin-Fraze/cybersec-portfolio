@@ -1,4 +1,4 @@
-# Automation and API Layer Lab
+# Automation & API Layer Lab
 
 ## Objective
 

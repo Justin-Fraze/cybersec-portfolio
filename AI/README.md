@@ -13,4 +13,4 @@ Each lab documents what I built, what I learned, and relevant security considera
 
 ## Labs
 
-- [Automation and API Layer](Automation%20&%20API%20Layer.md): A Make.com workflow that combines weather, calendar events, and tasks into a daily Slack briefing.
+- [Automation & API Layer](Automation%20&%20API%20Layer.md): A Make.com workflow that combines weather, calendar events, and tasks into a daily Slack briefing.

@@ -14,3 +14,4 @@ Each lab documents what I built, what I learned, and relevant security considera
 ## Labs
 
 - [Automation & API Layer](Automation%20&%20API%20Layer.md): A Make.com workflow that combines weather, calendar events, and tasks into a daily Slack briefing.
+- [AI Email Triage](ai-email-triage.md): An n8n workflow that uses OpenAI to classify Gmail messages by urgency and post summaries to a Slack test channel.

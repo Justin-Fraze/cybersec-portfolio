@@ -29,7 +29,7 @@ The model and parser attach to the Basic LLM Chain as sub-nodes. Slack receives 
 **Provider:** OpenAI  
 **Model reported in a successful response:** `gpt-5-mini-2025-08-07`  
 **Documentation updated:** November 20, 2026  
-**Not recorded:** Exact n8n version, individual execution timestamps, token usage, cost, and measured latency.
+**Not recorded:** Exact n8n version, individual execution timestamps, and measured latency. Aggregate API usage and estimated cost are documented below.
 
 ## Build process
 
@@ -195,6 +195,24 @@ All messages were synthetic. These are functional checks on a small test set, no
 
 The exact classification and message text from the automatic polling test were not recorded. Its result establishes automatic delivery, not an additional measured urgency-classification result.
 
+## API usage and estimated cost
+
+The OpenAI analytics row reported **Direct API: 5 requests, 2,309 input tokens, 1,898 output tokens, and 4,207 total tokens**. The column meanings are interpreted from the supplied row; its reporting time window and cached-input breakdown were not recorded. These five API requests are a usage sample, not five distinct documented test cases.
+
+Using GPT-5 mini's standard rates of **$0.25 per million input tokens** and **$2.00 per million output tokens**, checked November 20, 2026:
+
+| Metric | Calculation | Estimated cost (USD) |
+|---|---|---:|
+| Input tokens | 2,309 ÷ 1,000,000 × $0.25 | $0.00057725 |
+| Output tokens | 1,898 ÷ 1,000,000 × $2.00 | $0.00379600 |
+| Total for 5 API requests | Input + output | **$0.00437325** |
+| Average per email, assuming one request per email | Total ÷ 5 | **$0.00087465** |
+| Projection for 1,000 similar emails | Average × 1,000 | **$0.87465 (about $0.87)** |
+
+The average is approximately **0.0875 cents per email**. This is a token-based estimate, not a verified billed amount. It assumes the sample belongs to this workflow, one model request per email, standard pricing, and no cached-input discount. Longer emails, different outputs, retries, or additional model calls can change the cost. n8n hosting/subscription and other service costs are excluded.
+
+Pricing source: [OpenAI GPT-5 mini model pricing](https://developers.openai.com/api/docs/models/gpt-5-mini).
+
 ## What I learned
 
 - Trigger output and full message content are different: a Gmail snippet should not substitute for the full email body.
@@ -225,7 +243,8 @@ Do not use this prototype to make unattended security-response decisions. Review
 ## Next improvements and portfolio evidence
 
 - [ ] Add sanitized screenshots of the full workflow and Slack results.
-- [ ] Record n8n version, execution timestamps, latency, and token usage/cost.
+- [x] Record aggregate API token usage and estimated cost per email.
+- [ ] Record n8n version, execution timestamps, and measured latency.
 - [ ] Test review, empty-body, and prompt-injection cases.
 - [ ] Add and test persistent duplicate protection.
 - [ ] Add bounded retries and a sanitized failure/review path.
